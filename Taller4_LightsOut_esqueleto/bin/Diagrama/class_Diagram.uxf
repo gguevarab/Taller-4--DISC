@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>110</y>
+      <w>210</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>JCanvas
+extends: JPanel;
+implements: MouseListener;
+
+--
+- Tablero: tablero;
+- Rectangle[][]: rectangles;
+- BufferedImage: lightbulb;
+- Frame: frame;
+- int: rectangleWidth;
+- int: rectangleHeight;
+- int: sizeCanvas;
+- int: difficulty;
+- bool[][]: lightsBool;
+- bool: winner;
+
+--
++ jCanvas();
++ void paintComponent(graphics);
++ void mouseClicked(MouseEvent);
++ int getJugadas();
++ void restartGame();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>20</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Tablero
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>530</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>sideBar
+extends: JPanel
+
+--
+- Frame: frame;
+
+--
++ sideBar();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>110</y>
+      <w>210</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>Frame 
+extends: JFrame
+
+--
+-JPanel: pTopBar;
+-JPanel: pBottomBar;
+-JPanel: pSideBar;
+-jPanel: pCanvas;
+-CSVToList: ftop10;
+
+--
++ Frame();
++ void newGame();
++ void restartGame();
++ void showTop10();
++ void changePlayer();
++ void updateScore(int);
++ int getCanvaSize();
++ int getDifficulty();
++ void setWinPlayer(int);
++ void main();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>290</y>
+      <w>320</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>CSVToList
+
+--
+- ArrayList&lt;String&gt;: rowString;
+- ArrayList&lt;ArrayList&lt;String&gt;&gt;: rows;
+
+--
++ CSVToList();
++ void showFrame();
++ void addRecord(int, String);</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>530</y>
+      <w>210</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>topBar
+extends: JPanel
+
+--
+- int: canvaSize;
+- int: difficulty;
+- Frame: frame;
+- ButtonGroup: group;
+
+--
++ topBar();
++ int getDifficulty();
++ int getCanvaSize();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>530</y>
+      <w>210</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>bottomBar
+extends: JPanel
+
+--
+- JLabel: lScore;
+- JLabel: lPlayer;
+
+--
++ bottomBar();
++ void updateScore(int);
++ void updateName(String);
++ String getName();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>110</y>
+      <w>320</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>rendererJList
+extends: DefaultListCellRenderer
+
+--
+- Font: font;
+- Color: color;
+
+--
++ Component getListCellRendererComponent(...);</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>450</y>
+      <w>30</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>450</y>
+      <w>30</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>620</x>
+      <y>450</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;230.0;30.0;230.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>450</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0;230.0;40.0;230.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>380</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>250</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>450</y>
+      <w>230</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;50.0;210.0;50.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>40</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>330</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>310</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>480</x>
+      <y>0</y>
+      <w>140</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Frame sirve como
+controlador y 
+grafica principal.
+Conecta todos los
+elementos.
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
